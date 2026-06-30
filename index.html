@@ -3,36 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="tiktok-domain-verification" content="WDTlNNeECVIePX07dFYrLUvw1MXK4rF9" />
-  <title>Resumo Fácil – TikTok Auth</title>
+  <title>Resumo Fácil – Auth</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 60px; background: #0d0d1a; color: white; }
-    #code-box { font-size: 18px; padding: 16px; background: #1a1a2e; border-radius: 8px;
-                word-break: break-all; margin: 20px auto; max-width: 600px; }
-    button { padding: 12px 28px; font-size: 16px; background: #F5A623; border: none;
-             border-radius: 6px; cursor: pointer; color: #000; font-weight: bold; }
+    body{font-family:sans-serif;text-align:center;padding:60px;background:#0d0d1a;color:white}
+    #code{font-size:16px;padding:16px;background:#1a1a2e;border-radius:8px;word-break:break-all;
+          margin:20px auto;max-width:700px;border:1px solid #F5A623}
+    button{padding:12px 28px;font-size:16px;background:#F5A623;border:none;
+           border-radius:6px;cursor:pointer;color:#000;font-weight:bold;margin-top:12px}
   </style>
 </head>
 <body>
   <div id="main"></div>
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const code   = params.get('code');
-    const error  = params.get('error');
-    const main   = document.getElementById('main');
-
+    const p = new URLSearchParams(location.search);
+    const code = p.get('code'), error = p.get('error');
+    const el = document.getElementById('main');
     if (error) {
-      main.innerHTML = `<h2>❌ Erro: ${error}</h2><p>${params.get('error_description') ?? ''}</p>`;
+      el.innerHTML = `<h2>❌ ${error}</h2><p>${p.get('error_description')||''}</p>`;
     } else if (code) {
-      main.innerHTML = `
+      el.innerHTML = `
         <h1>✅ Quase lá!</h1>
-        <p>Copie o código abaixo e cole no terminal onde <strong>node setup-tiktok.js</strong> está aguardando:</p>
-        <div id="code-box">${code}</div>
-        <button onclick="navigator.clipboard.writeText('${code}').then(()=>this.textContent='✔ Copiado!')">
+        <p>Copie o código abaixo e cole no terminal onde <strong>node setup-tiktok.js</strong> aguarda:</p>
+        <div id="code">${code}</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('code').textContent).then(()=>this.textContent='✔ Copiado!')">
           Copiar código
         </button>`;
     } else {
-      main.innerHTML = '<h1>📚 Resumo Fácil</h1><p>Resumos animados dos melhores livros.</p>';
+      el.innerHTML = '<h1>📚 Resumo Fácil</h1><p>Resumos animados dos melhores livros.</p>';
     }
   </script>
 </body>
 </html>
+
