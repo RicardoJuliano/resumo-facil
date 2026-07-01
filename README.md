@@ -1,17 +1,13 @@
 # Resumo Fácil
 
-Projeto de automação para o canal **Resumo Fácil** — geração de vídeos de resumo de livros com apoio de Inteligência Artificial.
+Repositório do canal Resumo Fácil no YouTube, focado em resumos de livros em português.
 
-## Sobre o projeto
+Estou usando esse projeto para automatizar partes do processo de criação de vídeos com IA — desde a geração do roteiro até a edição. Ainda em construção.
 
-O Resumo Fácil é um canal no YouTube focado em resumos de livros em português. Este repositório contém os scripts e ferramentas de automação do fluxo de produção de vídeos, utilizando IA para roteirização e edição.
+## Canal
 
-## Tecnologias
+[youtube.com/@resumofacil](https://youtube.com/@resumofacil)
 
-- HTML/CSS para interfaces de suporte
-- Automação com scripts
-- Integração com ferramentas de IA
+---
 
-## Autor
-
-Ricardo Juliano — [LinkedIn](https://linkedin.com/in/ricardo-juliano) • [GitHub](https://github.com/RicardoJuliano)
+Ricardo Juliano — [LinkedIn](https://linkedin.com/in/ricardo-juliano)
